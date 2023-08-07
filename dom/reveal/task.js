@@ -1,15 +1,13 @@
-const textBlock = document.querySelector(".reveal");
+const textBlocks = document.querySelectorAll(".reveal");
 
-function checkVisibility() {
-  const { top, bottom  } = textBlock.getBoundingClientRect();
-  
-  if(top < window.innerHeight && bottom > 0) {
-    textBlock.classList.add("reveal_active");
-  } else {
-    textBlock.classList.remove("reveal_active");
-  }
-}
+textBlocks.forEach((element) => {
+  window.addEventListener("scroll", function () {
+    const { top, bottom } = element.getBoundingClientRect();
 
-checkVisibility();
-
-window.addEventListener("scroll", checkVisibility);
+    if (top < window.innerHeight && bottom > 0) {
+      element.classList.add("reveal_active");
+    } else {
+      element.classList.remove("reveal_active");
+    }
+  });
+});
