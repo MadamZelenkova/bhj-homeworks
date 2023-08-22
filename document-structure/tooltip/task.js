@@ -1,5 +1,4 @@
 const linksToTooltips = document.querySelectorAll(".has-tooltip");
-let tooltipTimeout;
 
 linksToTooltips.forEach(element => {
   let tooltipElement = element.nextElementSibling;
@@ -21,19 +20,16 @@ linksToTooltips.forEach(element => {
     event.preventDefault();
 
     allElements.forEach(e => {
-      e.classList.remove("tooltip_active");
+      if (e !== element.nextElementSibling) {
+        e.classList.remove("tooltip_active");
+      }
     });
 
     let tooltipElement = element.nextElementSibling;
-    tooltipElement.classList.add("tooltip_active");
+    tooltipElement.classList.toggle("tooltip_active");
 
-      let { top, left } = element.getBoundingClientRect();
-      tooltipElement.style.left = `${left}px`;
-      tooltipElement.style.top = `${top + 20}px`;
-
-      clearTimeout(tooltipTimeout);
-      tooltipTimeout = setTimeout(function() {
-        tooltipElement.classList.remove("tooltip_active");
-      }, 5000);
+    let { top, left } = element.getBoundingClientRect();
+    tooltipElement.style.left = `${left}px`;
+    tooltipElement.style.top = `${top + 20}px`;
   });
 });

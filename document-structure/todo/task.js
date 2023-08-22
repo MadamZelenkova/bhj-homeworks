@@ -5,7 +5,7 @@ const form = document.querySelector(".tasks__control");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  if (textField.value) {
+  if (textField.value.trim()) {
     const point = document.createElement("div");
     point.className = "task";
 
