@@ -9,3 +9,16 @@ body {
 .poll__title {
   margin-bottom: 20px;
 }
+
+.poll__answers {
+  display: flex;
+  justify-content: start;
+  gap: 20px;  
+}
+
+.poll__answer {
+  color: black;
+  background-color: white;
+  border: 1px solid #C0C0C0;
+  border-radius: 10px;
+}

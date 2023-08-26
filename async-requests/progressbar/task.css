@@ -4,11 +4,17 @@ progress {
 
 form {
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+  padding: 10px;
 }
 
 label {
-    display: block;
+    display: flex;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 input {
@@ -21,6 +27,10 @@ input {
 
 button {
     font-size: 14px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(254, 254, 254);
+    border: 1px solid #C0C0C0;
+    border-radius: 10px;
 }
 
 #file:focus ~ label {
@@ -31,17 +41,13 @@ button {
   width: 600px;
 }
 
-.input__wrapper {
-  display: inline-block;
-}
-
 .input__wrapper-button {
   font-family: Golos, Arial, sans-serif;
   font-size: 14px;
-  color: #fff;
-  background-color: #06f;
-  border: 1px solid transparent;
-  border-radius: 2px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(254, 254, 254);
+  border: 1px solid #C0C0C0;
+  border-radius: 10px;
   box-sizing: border-box;
   cursor: pointer;
   padding: 8px 12px;
