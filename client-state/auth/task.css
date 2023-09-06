@@ -45,3 +45,12 @@
   display: block;
   text-align: center;
 }
+
+.exit {
+  display: none;
+}
+
+.exit_active {
+  display: block;
+  margin: 30px 0 auto auto;
+}

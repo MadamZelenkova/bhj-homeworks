@@ -8,3 +8,11 @@ textarea {
   border: 1px solid #e2e2e2;
   box-sizing: border-box;
 }
+
+.deleteText {
+  color: black;
+  background-color: #fff;
+  border: 1px solid #cdc9c9;
+  border-radius: 10px;
+}
+
