@@ -11,12 +11,13 @@ const createBtn = function () {
 
   btn.onclick = function () {
     field.value = "";
-    localStorage.clear();
+    localStorage.removeItem("textValue");
   };
 };
 
-if (savedText) {
-  field.value = savedText;
+field.value = savedText;
+
+if (!field.nextElementSibling) {
   createBtn();
 }
 
@@ -24,10 +25,6 @@ field.addEventListener("input", function () {
   const text = field.value;
 
   localStorage.setItem("textValue", text);
-
-  if (field.value && !field.nextElementSibling) {
-    createBtn();
-  }
 });
 
 
